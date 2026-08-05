@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://alebocci.github.io/sitemap.xml

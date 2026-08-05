@@ -1,0 +1,338 @@
+{
+  "site": {
+    "name": "Alessandro Bocci",
+    "initials": "AB",
+    "eyebrow": "Computer Science · Research · Teaching · Public engagement",
+    "role": "Researcher and lecturer in Computer Science",
+    "affiliation": "Department of Computer Science, University of Pisa",
+    "intro": "I study how to design, distribute, and make software systems observable across heterogeneous infrastructures, from the Cloud–Edge continuum to the quantum cloud, with a focus on security, sustainability, and quality of service.",
+    "location": "Pisa, Italy",
+    "email": "alessandro.bocci@unipi.it",
+    "lastUpdated": "August 2026",
+    "availability": "Open to research collaborations, thesis projects, and public engagement initiatives.",
+    "links": [
+      {
+        "label": "ORCID",
+        "url": "https://orcid.org/0000-0002-7000-2103"
+      },
+      {
+        "label": "Google Scholar",
+        "url": "https://scholar.google.com/citations?user=a6Cccr4AAAAJ"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/alebocci"
+      },
+      {
+        "label": "Email",
+        "url": "mailto:alessandro.bocci@unipi.it"
+      },
+      {
+        "label": "University profile",
+        "url": "https://di.unipi.it/persone/#a044855"
+      }
+    ]
+  },
+  "about": {
+    "title": "Designing software that knows where and how it should run",
+    "paragraphs": [
+      "My research focuses on engineering distributed software systems that run across heterogeneous infrastructures. A common thread is turning differences in capacity, reliability, energy use, cost, and trust into actionable information for placement, decomposition, orchestration, and execution decisions.",
+      "I work with declarative models, service-oriented architectures, open-source prototypes, and reproducible experiments. In recent years, I have extended these topics from the Cloud–Edge continuum to quantum cloud infrastructures."
+    ],
+    "positions": [
+      {
+        "period": "Since 2023",
+        "role": "Fixed-term Assistant Professor (RTD-A)",
+        "place": "University of Pisa"
+      },
+      {
+        "period": "Since 2024",
+        "role": "Assistant Professor",
+        "place": "Faculty of Information Studies, Novo mesto"
+      }
+    ]
+  },
+  "research": {
+    "intro": "Three interconnected research directions, united by a focus on non-functional requirements, reproducibility, and the development of practically reusable tools.",
+    "areas": [
+      {
+        "number": "01",
+        "title": "Quantum software engineering",
+        "description": "Methods and infrastructures to distribute, optimise, and make the execution of quantum circuits reproducible across heterogeneous QPUs: circuit cutting, shot distribution, benchmarking, hardware-aware selection, and adaptive execution control.",
+        "tags": [
+          "Quantum cloud",
+          "QPU selection",
+          "Circuit cutting",
+          "Benchmarking"
+        ]
+      },
+      {
+        "number": "02",
+        "title": "Cloud–Edge and sustainability",
+        "description": "Placement and simulation of distributed applications across the Cloud–Edge continuum, with a particular focus on FaaS orchestrations, energy-data observability, resource consumption, and microservice architectures.",
+        "tags": [
+          "Cloud–Edge",
+          "FaaS",
+          "Observability",
+          "Green software"
+        ]
+      },
+      {
+        "number": "03",
+        "title": "Software security",
+        "description": "Security-by-design for distributed applications: placement informed by information flows and provider trust, threat modelling, secure partitioning, and trustworthy execution platforms.",
+        "tags": [
+          "Secure placement",
+          "Information flow",
+          "Threat modeling",
+          "Trusted execution"
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "title": "Cut&Shoot",
+        "type": "Quantum software",
+        "description": "Distributes quantum-circuit fragments and shots across multiple NISQ computers, reconstructing the final result and analysing trade-offs among parallelism, overhead, and quality.",
+        "url": "https://github.com/di-unipi-socc/Cut-and-Shoot",
+        "cta": "Repository"
+      },
+      {
+        "title": "QSimBench",
+        "type": "Benchmarking",
+        "description": "A library, dataset, and set of procedures for reproducibly comparing quantum software across algorithms, circuits, shot budgets, and different backends.",
+        "url": "https://github.com/GBisi/qsimbench",
+        "cta": "Repository"
+      },
+      {
+        "title": "ODA",
+        "type": "Energy data",
+        "description": "A microservice architecture for acquiring, transforming, aggregating, and making heterogeneous energy data observable, developed within the NEST project.",
+        "url": "https://github.com/di-unipi-socc/ODA",
+        "cta": "Repository"
+      },
+      {
+        "title": "FaaS2Fog",
+        "type": "Secure placement",
+        "description": "A declarative prototype for determining placements of FaaS chains while accounting for hardware, software, latency, data-sensitivity, and provider-trust requirements.",
+        "url": "https://github.com/di-unipi-socc/FaaS2Fog",
+        "cta": "Repository"
+      },
+      {
+        "title": "LambdaContSim",
+        "type": "Simulation",
+        "description": "A discrete-event simulator for deploying and executing FaaS orchestrations on dynamic Cloud–IoT infrastructures, including failures, recoveries, and energy metrics.",
+        "url": "https://github.com/di-unipi-socc/LambdaContSim",
+        "cta": "Repository"
+      },
+      {
+        "title": "QTris",
+        "type": "Public engagement",
+        "description": "An educational public-engagement application that uses an interactive game to introduce quantum computing and quantum software concepts.",
+        "url": "https://github.com/alebocci/QTris_browser",
+        "cta": "Repository"
+      }
+    ]
+  },
+  "publications": {
+    "intro": "A selection of representative publications. The complete and up-to-date list is available on Google Scholar and ORCID."
+  },
+  "teaching": {
+    "intro": "Courses are organised by academic year, with links to the corresponding course pages.",
+    "supervision": {
+      "value": "11",
+      "label": "supervised bachelor’s and master’s theses",
+      "description": "The complete list includes the topic, degree programme, date, and a short description of each project.",
+      "url": "tesi.html"
+    },
+    "theses": {
+      "intro": "I have supervised theses on software security, distributed systems, sustainability, and quantum software engineering, from topic definition to the review of software, experiments, and the final dissertation.",
+      "groups": [
+        {
+          "title": "Master’s theses",
+          "items": [
+            {
+              "student": "Giovanni Neglia",
+              "title": "Design and Secure Deployment of Hierarchical Infrastructures: The ODA Case Study",
+              "degree": "Master’s Degree in Cybersecurity",
+              "date": "April 2026",
+              "description": "Design and secure deployment of hierarchical microservice infrastructures, using ODA as a case study and considering segmentation, communications, and component configuration."
+            },
+            {
+              "student": "Nicola Venturi",
+              "title": "Analyzing Microservices: Threat Modeling and Exploitation in an ODA Case Study",
+              "degree": "Master’s Degree in Computer Science",
+              "date": "December 2025",
+              "description": "Application of threat modelling and vulnerability analysis to a microservice architecture, including attack scenarios and a discussion of countermeasures in the ODA context."
+            },
+            {
+              "student": "Emanuele Albertosi",
+              "title": "Secure Deployment of Stateless Functions over the Cloud-IoT Continuum",
+              "degree": "Master’s Degree in Cybersecurity",
+              "date": "July 2022",
+              "description": "Secure placement of stateless functions and development of extensions to declarative prototypes for the Cloud–IoT continuum."
+            }
+          ]
+        },
+        {
+          "title": "Bachelor’s theses in Computer Science",
+          "items": [
+            {
+              "student": "Francesco Gianassi",
+              "title": "Sviluppo di una pipeline automatizzata per la gestione di dati sperimentali nel quantum computing",
+              "degree": "Bachelor’s Degree in Computer Science",
+              "date": "February 2026",
+              "description": "A pipeline to collect, harmonise, and analyse data produced by experiments across different circuits and backends, reducing manual operations and improving reproducibility."
+            },
+            {
+              "student": "Sergio De Crescenzo",
+              "title": "Deep Reinforcement Learning for Adaptive Shot Allocation in Quantum Circuit Execution",
+              "degree": "Bachelor’s Degree in Computer Science",
+              "date": "December 2025",
+              "description": "A study of deep reinforcement learning for adaptively deciding how to allocate the shot budget during quantum-circuit execution."
+            },
+            {
+              "student": "Giovanni Del Bianco",
+              "title": "Studio sperimentale sull’unione di strategie di esecuzione distribuita e incrementale per sistemi quantistici NISQ",
+              "degree": "Bachelor’s Degree in Computer Science",
+              "date": "December 2025",
+              "description": "Combining distribution techniques across multiple QPUs with incremental stopping strategies, including an experimental assessment of benefits and trade-offs."
+            },
+            {
+              "student": "Leonardo Puosi",
+              "title": "Integrazione di Green IT per stimare le emissioni di CO₂ nei sistemi software basati su Kubernetes",
+              "degree": "Bachelor’s Degree in Computer Science",
+              "date": "July 2025",
+              "description": "Metric acquisition and integration of models for estimating energy consumption and emissions associated with containerised workloads running on Kubernetes."
+            },
+            {
+              "student": "Karim Mahmoud",
+              "title": "Ottimizzazione del taglio e della distribuzione di circuiti quantistici in ambienti multi-QPU",
+              "degree": "Bachelor’s Degree in Computer Science",
+              "date": "May 2025",
+              "description": "Analysis of strategies for selecting cuts and assigning fragments and shots to different devices, extending experiments related to Cut&Shoot."
+            },
+            {
+              "student": "Samuele Grossi",
+              "title": "Trasformazione automatica del formato dei dati nel servizio ODA del progetto NEST",
+              "degree": "Bachelor’s Degree in Computer Science",
+              "date": "April 2025",
+              "description": "Development of a component that automatically transforms heterogeneous energy data into representations consistent with ODA’s architecture and interoperability models."
+            },
+            {
+              "student": "Lorenzo Imberti",
+              "title": "Dall’API al database: sviluppo di due microservizi per la gestione dei dati di Microsoft Advertising",
+              "degree": "Bachelor’s Degree in Computer Science",
+              "date": "April 2025",
+              "description": "Design of a data acquisition, processing, and persistence flow through two microservices and their interfaces."
+            },
+            {
+              "student": "Alessio Matricardi",
+              "title": "Simulazione di orchestrazione di funzioni FaaS su infrastrutture Cloud-IoT",
+              "degree": "Bachelor’s Degree in Computer Science",
+              "date": "July 2022",
+              "description": "Design and development of LambdaContSim to assess the deployment and execution of FaaS orchestrations in dynamic scenarios."
+            }
+          ]
+        }
+      ]
+    },
+    "years": [
+      {
+        "year": "2025/2026",
+        "courses": [
+          {
+            "title": "Advanced Software Engineering",
+            "role": "Co-lecturer · University of Pisa",
+            "description": "REST services, microservices, OpenAPI, Flask, Docker, testing, continuous integration, and software-development lifecycle security. Taught in English.",
+            "url": "https://elearning.di.unipi.it/course/view.php?id=1124",
+            "urlLabel": "Course materials — restricted access"
+          },
+          {
+            "title": "Programming and Data Analysis",
+            "role": "Co-lecturer · University of Pisa",
+            "description": "Module on object-oriented programming and the development of graphical user interfaces in Python.",
+            "url": "https://elearning22.humnet.unipi.it/enrol/index.php?id=1527",
+            "urlLabel": "Course materials — restricted access"
+          },
+          {
+            "title": "Secure Software Development",
+            "role": "Course coordinator · FIS Novo mesto",
+            "description": "Secure SDLC, risk management, threat modelling, secure design, static analysis, security testing, authentication, authorisation, and DevSecOps. Master’s course taught in English.",
+            "url": "https://moodle.fis.unm.si/course/view.php?id=223",
+            "urlLabel": "Course materials — restricted access"
+          }
+        ]
+      },
+      {
+        "year": "2024/2025",
+        "courses": [
+          {
+            "title": "Advanced Software Engineering",
+            "role": "Co-lecturer · University of Pisa",
+            "description": "REST services, microservices, OpenAPI, Flask, Docker, testing, continuous integration, and software-development lifecycle security. Taught in English.",
+            "url": "https://unimap.unipi.it/registri/dettregistriNEW.php?re=11060882::::&ri=044855",
+            "urlLabel": "Course record"
+          },
+          {
+            "title": "Programming and Data Analysis",
+            "role": "Co-lecturer · University of Pisa",
+            "description": "Module on object-oriented programming and the development of graphical user interfaces in Python.",
+            "url": "https://unimap.unipi.it/registri/dettregistriNEW.php?re=11060960::::&ri=044855",
+            "urlLabel": "Course record"
+          },
+          {
+            "title": "Secure Software Development",
+            "role": "Course coordinator · FIS Novo mesto",
+            "description": "Secure SDLC, risk management, threat modelling, secure design, static analysis, security testing, authentication, authorisation, and DevSecOps. Master’s course taught in English.",
+            "url": "https://moodle.fis.unm.si/course/view.php?id=223",
+            "urlLabel": "Course materials — restricted access"
+          }
+        ]
+      },
+      {
+        "year": "2023/2024",
+        "courses": [
+          {
+            "title": "Advanced Software Engineering",
+            "role": "Co-lecturer · University of Pisa",
+            "description": "REST services, microservices, OpenAPI, Flask, Docker, testing, continuous integration, and software-development lifecycle security. Taught in English.",
+            "url": "https://unimap.unipi.it/registri/dettregistriNEW.php?re=10336408::::&ri=044855",
+            "urlLabel": "Course record"
+          },
+          {
+            "title": "Programming and Data Analysis",
+            "role": "Co-lecturer · University of Pisa",
+            "description": "Module on object-oriented programming and the development of graphical user interfaces in Python.",
+            "url": "https://unimap.unipi.it/registri/dettregistriNEW.php?re=10336495::::&ri=044855",
+            "urlLabel": "Course record"
+          }
+        ]
+      }
+    ]
+  },
+  "engagement": {
+    "intro": "Two ongoing activities through which I bring research and programming beyond the classroom, with initiatives for students, families, and non-specialist audiences.",
+    "items": [
+      {
+        "period": "Since 2024",
+        "title": "Pisa Quantum Group",
+        "role": "Founding member · Research and public engagement",
+        "description": "I contribute to the group’s activities on quantum computing and quantum software engineering, including the organisation of the 2024 and 2025 Pisa Quantum Festival and public demonstrations based on QTris at events such as BRIGHT-NIGHT and Internet Festival.",
+        "url": "https://quantum.unipi.it/",
+        "cta": "Visit the group"
+      },
+      {
+        "period": "Since 2024",
+        "title": "Pisa CoderDojo",
+        "role": "Volunteer mentor and organiser",
+        "description": "I prepare materials and run free sessions for children and teenagers on Scratch, Python, micro:bit, machine learning, and educational robotics, supporting participants as they develop their projects.",
+        "url": "https://pisa.coderdojo.it/",
+        "cta": "Discover CoderDojo"
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "Alessandro Bocci"
+  }
+}

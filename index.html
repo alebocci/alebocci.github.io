@@ -1,67 +1,113 @@
 <!doctype html>
 <html lang="it">
 <head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5f6f2">
-  <link rel="icon" href="assets/favicon.ico" sizes="any">
-  <link rel="icon" href="assets/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="assets/favicon-192.png">
-  <link rel="stylesheet" href="assets/style.css">
-  <script defer src="assets/app.js"></script>
-  <meta name="description" content="Sito accademico personale di Alessandro Bocci: ricerca, didattica e terza missione.">
-  <title>Alessandro Bocci · Ricerca, didattica e terza missione</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5f6f2">
+<meta name="description" content="Sito accademico personale di Alessandro Bocci: ricerca, didattica e terza missione.">
+<link rel="canonical" href="https://alebocci.github.io/">
+<link rel="alternate" hreflang="it" href="https://alebocci.github.io/">
+<link rel="alternate" hreflang="en" href="https://alebocci.github.io/en/">
+<link rel="alternate" hreflang="x-default" href="https://alebocci.github.io/">
+<meta property="og:type" content="profile">
+<meta property="og:locale" content="it_IT">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:title" content="Alessandro Bocci · Ricerca, didattica e terza missione">
+<meta property="og:description" content="Sito accademico personale di Alessandro Bocci: ricerca, didattica e terza missione.">
+<meta property="og:image" content="https://alebocci.github.io/assets/alessandro-bocci.webp">
+<meta property="og:image:alt" content="Ritratto di Alessandro Bocci">
+<meta property="og:url" content="https://alebocci.github.io/">
+<meta property="og:site_name" content="Alessandro Bocci">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Alessandro Bocci · Ricerca, didattica e terza missione">
+<meta name="twitter:description" content="Sito accademico personale di Alessandro Bocci: ricerca, didattica e terza missione.">
+<meta name="twitter:image" content="https://alebocci.github.io/assets/alessandro-bocci.webp">
+<link rel="icon" href="/assets/favicon.ico?v=20260805-audit1" sizes="any">
+<link rel="icon" href="/assets/favicon.png?v=20260805-audit1" type="image/png">
+<link rel="apple-touch-icon" href="/assets/favicon-192.png?v=20260805-audit1">
+<link rel="stylesheet" href="/assets/style.css?v=20260805-audit1">
+<script>try{const t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch{}</script>
+<script defer src="/assets/app.js?v=20260805-audit1"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","@id":"https://alebocci.github.io/#profile-page","url":"https://alebocci.github.io/","name":"Alessandro Bocci · Ricerca, didattica e terza missione","description":"Sito accademico personale di Alessandro Bocci: ricerca, didattica e terza missione.","inLanguage":"it","mainEntity":{"@type":"Person","@id":"https://alebocci.github.io/#alessandro-bocci","name":"Alessandro Bocci","jobTitle":"Ricercatore e docente in Informatica","affiliation":{"@type":"Organization","name":"Università di Pisa","url":"https://www.unipi.it/"},"image":"https://alebocci.github.io/assets/alessandro-bocci.webp","email":"mailto:alessandro.bocci@unipi.it","url":"https://alebocci.github.io","sameAs":["https://orcid.org/0000-0002-7000-2103","https://scholar.google.com/citations?user=a6Cccr4AAAAJ","https://github.com/alebocci","https://di.unipi.it/persone/#a044855"],"knowsAbout":["Quantum software engineering","Cloud–Edge e sostenibilità","Sicurezza del software"]}}</script>
+<title>Alessandro Bocci · Ricerca, didattica e terza missione</title>
 </head>
-<body data-page="home">
-  <a class="skip-link" href="#main">Vai al contenuto</a>
-  <div class="page-glow page-glow-a" aria-hidden="true"></div><div class="page-glow page-glow-b" aria-hidden="true"></div>
-
-  <header class="site-header" id="top">
-    <div class="shell header-inner">
-      <a class="brand" href="index.html" aria-label="Vai alla home">
-        <span class="brand-mark brand-mark-subtle"><img src="assets/logo.png" alt="" aria-hidden="true"></span>
-        <span class="brand-name">Alessandro Bocci</span>
-      </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
-        <span></span><span></span><span></span><span class="sr-only">Apri menu</span>
-      </button>
-      <nav id="primary-nav" class="primary-nav" aria-label="Navigazione principale">
-        <a href="index.html#profilo" data-nav="profilo">Profilo</a>
-        <a href="index.html#ricerca" data-nav="ricerca">Ricerca</a>
-        <a href="index.html#pubblicazioni" data-nav="pubblicazioni">Pubblicazioni</a>
-        <a href="didattica.html" data-nav="didattica">Didattica</a>
-        <a href="index.html#terza-missione" data-nav="terza-missione">Terza missione</a>
-        <a href="index.html#contatti" data-nav="contatti">Contatti</a>
-      </nav>
-      <button class="theme-toggle" type="button" aria-label="Cambia tema" title="Cambia tema"><span aria-hidden="true">◐</span></button>
-    </div>
-  </header>
-  <main id="main">
-    <section class="hero shell" aria-labelledby="hero-title">
-      <div class="hero-copy reveal">
-        <p class="eyebrow" data-bind="site.eyebrow"></p>
-        <h1 id="hero-title" data-bind="site.name">Alessandro Bocci</h1>
-        <p class="hero-role" data-bind="site.role"></p><p class="hero-affiliation" data-bind="site.affiliation"></p>
-        <p class="hero-intro" data-bind="site.intro"></p><div class="hero-actions" id="hero-links"></div>
-        <p class="availability"><span aria-hidden="true"></span><span data-bind="site.availability"></span></p>
-      </div>
-      <aside class="hero-visual reveal" aria-label="Ritratto di Alessandro Bocci">
-        <div class="monogram-card profile-card"><img class="profile-photo" src="assets/alessandro-bocci.webp" alt="Ritratto di Alessandro Bocci"><div class="hero-meta"><span data-bind="site.location"></span><span>Aggiornato: <strong data-bind="site.lastUpdated"></strong></span></div></div>
-      </aside>
-    </section>
-    <section class="section section-soft" id="profilo"><div class="shell split-layout"><div class="section-heading reveal"><p class="section-index">01 · Profilo</p><h2 data-bind="about.title"></h2></div><div class="about-copy reveal"><div id="about-paragraphs"></div><div class="timeline" id="positions"></div></div></div></section>
-    <section class="section" id="ricerca"><div class="shell"><div class="section-heading section-heading-wide reveal"><p class="section-index">02 · Ricerca</p><h2>Infrastrutture eterogenee, requisiti osservabili, software riproducibile</h2><p data-bind="research.intro"></p></div><div class="research-grid" id="research-areas"></div><div class="subheading-row reveal"><div><p class="section-index">Progetti e software</p><h3>Dal metodo all’artefatto aperto</h3></div><a class="text-link" href="https://github.com/alebocci" target="_blank" rel="noreferrer">Tutti i repository <span aria-hidden="true">↗</span></a></div><div class="project-grid" id="projects"></div></div></section>
-    <section class="section section-ink" id="pubblicazioni"><div class="shell"><div class="section-heading section-heading-wide reveal"><p class="section-index">03 · Pubblicazioni</p><h2>Pubblicazioni</h2><p data-bind="publications.intro"></p></div><div class="publication-toolbar reveal"><label class="search-field"><span class="sr-only">Cerca tra le pubblicazioni</span><span aria-hidden="true">⌕</span><input id="publication-search" type="search" placeholder="Cerca per titolo, autore, sede o anno"></label><div class="filter-pills" role="group" aria-label="Filtra per tipo"><button type="button" class="filter-pill is-active" data-filter="all">Tutte</button><button type="button" class="filter-pill" data-filter="Journal">Riviste</button><button type="button" class="filter-pill" data-filter="Conference">Conferenze</button></div></div><div class="publication-list" id="publications-list"></div><p class="no-results" id="publication-no-results" hidden>Nessuna pubblicazione corrisponde ai filtri selezionati.</p></div></section>
-    <section class="section section-soft" id="terza-missione"><div class="shell"><div class="section-heading section-heading-wide reveal"><p class="section-index">04 · Terza missione</p><h2>Informatica e quantum computing fuori dall’aula</h2><p data-bind="engagement.intro"></p></div><div class="engagement-list" id="engagement-list"></div></div></section>
-    <section class="contact-section" id="contatti"><div class="shell contact-card reveal"><div><p class="section-index">Contatti</p><h2>Parliamo di ricerca, tesi o divulgazione.</h2><p data-bind="site.availability"></p></div><div class="contact-actions" id="contact-links"></div></div></section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="shell footer-inner footer-simple">
-      <p>© <span id="current-year"></span> · Alessandro Bocci</p>
-      <div class="footer-links"><a href="mailto:alessandro.bocci@unipi.it">Email</a><a href="https://orcid.org/0000-0002-7000-2103" target="_blank" rel="noreferrer">ORCID</a><a href="https://github.com/alebocci" target="_blank" rel="noreferrer">GitHub</a><a href="https://di.unipi.it/persone/#a044855" target="_blank" rel="noreferrer">Pagina di Ateneo</a></div>
-    </div>
-  </footer>
-  <noscript><div class="noscript">Per visualizzare i contenuti del sito è necessario abilitare JavaScript.</div></noscript>
-</body></html>
+<body data-page="home" data-language="it">
+<a class="skip-link" href="#main">Vai al contenuto</a>
+<div class="page-glow page-glow-a" aria-hidden="true"></div><div class="page-glow page-glow-b" aria-hidden="true"></div>
+<header class="site-header" id="top">
+<div class="shell header-inner">
+<a class="brand" href="/" aria-label="Vai alla home"><span class="brand-mark brand-mark-subtle"><img src="/assets/logo.png?v=20260805-audit1" alt="" aria-hidden="true"></span><span class="brand-name">Alessandro Bocci</span></a>
+<button class="nav-toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Apri menu" data-open-label="Apri menu" data-close-label="Chiudi menu">
+<span></span><span></span><span></span><span class="sr-only nav-toggle-label">Apri menu</span>
+</button>
+<nav class="primary-nav" id="primary-nav" aria-label="Navigazione principale">
+<a href="/#profilo" data-nav="profile">Profilo</a>
+<a href="/#ricerca" data-nav="research">Ricerca</a>
+<a href="/#pubblicazioni" data-nav="publications">Pubblicazioni</a>
+<a href="/didattica.html" data-nav="teaching">Didattica</a>
+<a href="/#terza-missione" data-nav="engagement">Terza missione</a>
+<a href="/#contatti" data-nav="contacts">Contatti</a>
+</nav>
+<div class="header-controls">
+<a class="language-toggle" href="/en/" hreflang="en" lang="en" aria-label="Passa alla versione inglese" title="Passa alla versione inglese">EN</a>
+<button class="theme-toggle" type="button" aria-pressed="false" aria-label="Passa al tema scuro" title="Passa al tema scuro" data-dark-label="Passa al tema scuro" data-light-label="Passa al tema chiaro"><span aria-hidden="true">◐</span><span class="sr-only theme-toggle-label">Passa al tema scuro</span></button>
+</div>
+</div>
+</header>
+<main id="main">
+<section class="hero shell" aria-labelledby="hero-title">
+<div class="hero-copy reveal"><p class="eyebrow">Informatica · Ricerca · Didattica · Terza missione</p><h1 id="hero-title">Alessandro Bocci</h1><p class="hero-role">Ricercatore e docente in Informatica</p><p class="hero-affiliation">Dipartimento di Informatica, Università di Pisa</p><p class="hero-intro">Studio come progettare, distribuire e rendere osservabili sistemi software su infrastrutture eterogenee, dal continuum Cloud–Edge al quantum cloud, con attenzione a sicurezza, sostenibilità e qualità del servizio.</p><div class="hero-actions"><a class="button" href="https://orcid.org/0000-0002-7000-2103" target="_blank" rel="noreferrer">ORCID <span aria-hidden="true">↗</span></a><a class="button" href="https://scholar.google.com/citations?user=a6Cccr4AAAAJ" target="_blank" rel="noreferrer">Google Scholar <span aria-hidden="true">↗</span></a><a class="button" href="https://github.com/alebocci" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a><a class="button button-primary" href="mailto:alessandro.bocci@unipi.it">Email <span aria-hidden="true">→</span></a></div><p class="availability"><span aria-hidden="true"></span><span>Aperto a collaborazioni scientifiche, tesi e iniziative di divulgazione.</span></p></div>
+<aside class="hero-visual reveal" aria-label="Ritratto di Alessandro Bocci"><div class="monogram-card profile-card"><img class="profile-photo" src="/assets/alessandro-bocci.webp?v=20260805-audit1" alt="Ritratto di Alessandro Bocci" width="820" height="1024"><div class="hero-meta"><span>Pisa, Italia</span><span>Aggiornato: <strong>Agosto 2026</strong></span></div></div></aside>
+</section>
+<section class="section section-soft" id="profilo"><div class="shell split-layout"><div class="section-heading reveal"><p class="section-index">01 · Profilo</p><h2>Progettare software che sappia dove e come essere eseguito</h2></div><div class="about-copy reveal"><div><p>La mia ricerca riguarda l’ingegneria di sistemi software distribuiti eseguiti su infrastrutture eterogenee. Il punto comune è trasformare differenze di capacità, affidabilità, consumo, costo e fiducia in informazioni utilizzabili per decidere placement, decomposizione, orchestrazione ed esecuzione.</p><p>Lavoro con modelli dichiarativi, architetture a servizi, prototipi open source ed esperimenti riproducibili. Negli ultimi anni ho esteso questi temi dal continuum Cloud–Edge alle infrastrutture quantum cloud.</p></div><div class="timeline"><div class="timeline-item"><time>Dal 2023</time><div><strong>Ricercatore a tempo determinato di tipo A</strong><span>Università di Pisa</span></div></div><div class="timeline-item"><time>Dal 2024</time><div><strong>Assistant Professor</strong><span>Faculty of Information Studies, Novo mesto</span></div></div></div></div></div></section>
+<section class="section" id="ricerca"><div class="shell"><div class="section-heading section-heading-wide reveal"><p class="section-index">02 · Ricerca</p><h2>Infrastrutture eterogenee, requisiti osservabili, software riproducibile</h2><p>Tre filoni collegati da un approccio orientato ai requisiti non funzionali, alla riproducibilità e alla realizzazione di strumenti concretamente riutilizzabili.</p></div><div class="research-grid"><article class="research-card reveal"><span class="card-number">01</span><h3>Quantum software engineering</h3><p>Metodi e infrastrutture per distribuire, ottimizzare e rendere riproducibile l’esecuzione di circuiti quantistici su QPU eterogenee: circuit cutting, distribuzione degli shot, benchmarking, selezione hardware-aware e controllo adattivo dell’esecuzione.</p><ul class="tag-list"><li class="tag">Quantum cloud</li><li class="tag">QPU selection</li><li class="tag">Circuit cutting</li><li class="tag">Benchmarking</li></ul></article><article class="research-card reveal"><span class="card-number">02</span><h3>Cloud–Edge e sostenibilità</h3><p>Placement e simulazione di applicazioni distribuite nel continuum Cloud–Edge, con particolare attenzione a orchestrazioni FaaS, osservabilità dei dati energetici, consumo delle risorse e architetture a microservizi.</p><ul class="tag-list"><li class="tag">Cloud–Edge</li><li class="tag">FaaS</li><li class="tag">Observability</li><li class="tag">Green software</li></ul></article><article class="research-card reveal"><span class="card-number">03</span><h3>Sicurezza del software</h3><p>Security-by-design per applicazioni distribuite: placement sensibile ai flussi informativi e alla fiducia nei provider, threat modeling, partizionamento sicuro e piattaforme di esecuzione affidabili.</p><ul class="tag-list"><li class="tag">Secure placement</li><li class="tag">Information flow</li><li class="tag">Threat modeling</li><li class="tag">Trusted execution</li></ul></article></div><div class="subheading-row reveal"><div><p class="section-index">Progetti e software</p><h3>Dal metodo all’artefatto aperto</h3></div><a class="text-link" href="https://github.com/alebocci" target="_blank" rel="noreferrer">Profilo GitHub <span aria-hidden="true">↗</span></a></div><div class="project-grid"><article class="project-card reveal"><span class="project-type">Quantum software</span><h4>Cut&amp;Shoot</h4><p>Distribuzione di frammenti di circuiti quantistici e shot su più computer NISQ, con ricostruzione del risultato e analisi del compromesso tra parallelismo, overhead e qualità.</p><a href="https://github.com/di-unipi-socc/Cut-and-Shoot" target="_blank" rel="noreferrer">Repository <span aria-hidden="true">↗</span></a></article><article class="project-card reveal"><span class="project-type">Benchmarking</span><h4>QSimBench</h4><p>Libreria, dataset e procedure per confrontare in modo riproducibile software quantistico su algoritmi, circuiti, budget di shot e backend differenti.</p><a href="https://github.com/GBisi/qsimbench" target="_blank" rel="noreferrer">Repository <span aria-hidden="true">↗</span></a></article><article class="project-card reveal"><span class="project-type">Energy data</span><h4>ODA</h4><p>Architettura a microservizi per acquisire, trasformare, aggregare e rendere osservabili dati energetici eterogenei, sviluppata nel progetto NEST.</p><a href="https://github.com/di-unipi-socc/ODA" target="_blank" rel="noreferrer">Repository <span aria-hidden="true">↗</span></a></article><article class="project-card reveal"><span class="project-type">Secure placement</span><h4>FaaS2Fog</h4><p>Prototipo dichiarativo per determinare placement di catene FaaS considerando requisiti hardware, software, latenza, sensibilità dei dati e fiducia nei provider.</p><a href="https://github.com/di-unipi-socc/FaaS2Fog" target="_blank" rel="noreferrer">Repository <span aria-hidden="true">↗</span></a></article><article class="project-card reveal"><span class="project-type">Simulation</span><h4>LambdaContSim</h4><p>Simulatore a eventi discreti per deployment ed esecuzione di orchestrazioni FaaS su infrastrutture Cloud–IoT dinamiche, con fallimenti, ripristini e metriche energetiche.</p><a href="https://github.com/di-unipi-socc/LambdaContSim" target="_blank" rel="noreferrer">Repository <span aria-hidden="true">↗</span></a></article><article class="project-card reveal"><span class="project-type">Terza missione</span><h4>QTris</h4><p>Applicazione didattica e divulgativa che usa un gioco interattivo per introdurre concetti di calcolo e software quantistico.</p><a href="https://github.com/alebocci/QTris_browser" target="_blank" rel="noreferrer">Repository <span aria-hidden="true">↗</span></a></article></div></div></section>
+<section class="section section-ink" id="pubblicazioni"><div class="shell"><div class="section-heading section-heading-wide reveal"><p class="section-index">03 · Pubblicazioni</p><h2>Pubblicazioni</h2><p>Una selezione di lavori rappresentativi. L’elenco completo e aggiornato è disponibile su Google Scholar e ORCID.</p></div><div class="publication-toolbar reveal"><label class="search-field"><span class="sr-only">Cerca tra le pubblicazioni</span><span aria-hidden="true">⌕</span><input id="publication-search" type="search" placeholder="Cerca per titolo, autore, sede o anno" autocomplete="off" aria-controls="publications-list"></label><div class="filter-pills" role="group" aria-label="Filtra per tipo"><button class="filter-pill is-active" type="button" data-filter="all" aria-pressed="true" aria-controls="publications-list">Tutte</button><button class="filter-pill" type="button" data-filter="Journal" aria-pressed="false" aria-controls="publications-list">Riviste</button><button class="filter-pill" type="button" data-filter="Conference" aria-pressed="false" aria-controls="publications-list">Conferenze</button></div></div><p class="publication-count" id="publication-count" role="status" aria-live="polite" data-count-singular="pubblicazione visibile" data-count-plural="pubblicazioni visibili">8 pubblicazioni visibili</p><div class="publication-list" id="publications-list"><article class="publication-item reveal" data-publication data-kind="Journal" data-search="2026 journal cut&amp;shoot: distributed execution of quantum circuit fragments giuseppe bisicchia, alessandro bocci, josé garcía-alonso, juan m. murillo, antonio brogi ieee transactions on quantum engineering, vol. 7, art. 3102214">
+<span class="publication-year">2026</span>
+<div><h3>Cut&amp;Shoot: Distributed Execution of Quantum Circuit Fragments</h3><p class="publication-authors">Giuseppe Bisicchia, Alessandro Bocci, José García-Alonso, Juan M. Murillo, Antonio Brogi</p><p class="publication-meta">Rivista · IEEE Transactions on Quantum Engineering, vol. 7, art. 3102214</p></div>
+<a class="publication-link" href="https://doi.org/10.1109/TQE.2026.3675340" target="_blank" rel="noreferrer" aria-label="Apri: Cut&amp;Shoot: Distributed Execution of Quantum Circuit Fragments">↗</a>
+</article>
+<article class="publication-item reveal" data-publication data-kind="Journal" data-search="2026 journal rethinking services in the quantum age: the soq paradigm josé garcía-alonso, enrique moguel, jaime alvarado-valiente, javier romero-álvarez, álvaro m. aparicio-morales, juan m. murillo, francisco javier cavero, adrián romero-flores, alfonso e. márquez-chamorro, josé antonio parejo, antonio ruiz-cortés, giuseppe bisicchia, alessandro bocci, antonio brogi acm transactions on software engineering and methodology">
+<span class="publication-year">2026</span>
+<div><h3>Rethinking Services in the Quantum Age: The SOQ Paradigm</h3><p class="publication-authors">José García-Alonso, Enrique Moguel, Jaime Alvarado-Valiente, Javier Romero-Álvarez, Álvaro M. Aparicio-Morales, Juan M. Murillo, Francisco Javier Cavero, Adrián Romero-Flores, Alfonso E. Márquez-Chamorro, José Antonio Parejo, Antonio Ruiz-Cortés, Giuseppe Bisicchia, Alessandro Bocci, Antonio Brogi</p><p class="publication-meta">Rivista · ACM Transactions on Software Engineering and Methodology</p></div>
+<a class="publication-link" href="https://doi.org/10.1145/3805807" target="_blank" rel="noreferrer" aria-label="Apri: Rethinking Services in the Quantum Age: The SOQ Paradigm">↗</a>
+</article>
+<article class="publication-item reveal" data-publication data-kind="Conference" data-search="2025 conference qsimbench: an execution-level benchmark suite for quantum software engineering giuseppe bisicchia, alessandro bocci, josé garcía-alonso, juan m. murillo, antonio brogi 2025 ieee international conference on quantum computing and engineering (qce), vol. 2, pp. 175–180">
+<span class="publication-year">2025</span>
+<div><h3>QSimBench: An Execution-Level Benchmark Suite for Quantum Software Engineering</h3><p class="publication-authors">Giuseppe Bisicchia, Alessandro Bocci, José García-Alonso, Juan M. Murillo, Antonio Brogi</p><p class="publication-meta">Conferenza · 2025 IEEE International Conference on Quantum Computing and Engineering (QCE), vol. 2, pp. 175–180</p></div>
+<a class="publication-link" href="https://doi.org/10.1109/QCE65121.2025.10315" target="_blank" rel="noreferrer" aria-label="Apri: QSimBench: An Execution-Level Benchmark Suite for Quantum Software Engineering">↗</a>
+</article>
+<article class="publication-item reveal" data-publication data-kind="Conference" data-search="2024 conference towards enabling observability of energy demand, with nest alessandro bocci, antonio brogi, gianpaolo cugola, stefano forti, luca mottola, virginia pilloni, sabrina romano, jacopo soldani, elio usai proceedings of frame ’24, acm, pp. 5–6">
+<span class="publication-year">2024</span>
+<div><h3>Towards Enabling Observability of Energy Demand, with NEST</h3><p class="publication-authors">Alessandro Bocci, Antonio Brogi, Gianpaolo Cugola, Stefano Forti, Luca Mottola, Virginia Pilloni, Sabrina Romano, Jacopo Soldani, Elio Usai</p><p class="publication-meta">Conferenza · Proceedings of FRAME ’24, ACM, pp. 5–6</p></div>
+<a class="publication-link" href="https://doi.org/10.1145/3659994.3660314" target="_blank" rel="noreferrer" aria-label="Apri: Towards Enabling Observability of Energy Demand, with NEST">↗</a>
+</article>
+<article class="publication-item reveal" data-publication data-kind="Journal" data-search="2023 journal declarative secure placement of faas orchestrations in the cloud-edge continuum alessandro bocci, stefano forti, gian-luigi ferrari, antonio brogi electronics, vol. 12, no. 6, art. 1332">
+<span class="publication-year">2023</span>
+<div><h3>Declarative Secure Placement of FaaS Orchestrations in the Cloud-Edge Continuum</h3><p class="publication-authors">Alessandro Bocci, Stefano Forti, Gian-Luigi Ferrari, Antonio Brogi</p><p class="publication-meta">Rivista · Electronics, vol. 12, no. 6, art. 1332</p></div>
+<a class="publication-link" href="https://doi.org/10.3390/electronics12061332" target="_blank" rel="noreferrer" aria-label="Apri: Declarative Secure Placement of FaaS Orchestrations in the Cloud-Edge Continuum">↗</a>
+</article>
+<article class="publication-item reveal" data-publication data-kind="Journal" data-search="2023 journal secure partitioning of cloud applications, with cost look-ahead alessandro bocci, stefano forti, roberto guanciale, gian-luigi ferrari, antonio brogi future internet, vol. 15, no. 7, art. 224">
+<span class="publication-year">2023</span>
+<div><h3>Secure Partitioning of Cloud Applications, with Cost Look-Ahead</h3><p class="publication-authors">Alessandro Bocci, Stefano Forti, Roberto Guanciale, Gian-Luigi Ferrari, Antonio Brogi</p><p class="publication-meta">Rivista · Future Internet, vol. 15, no. 7, art. 224</p></div>
+<a class="publication-link" href="https://doi.org/10.3390/fi15070224" target="_blank" rel="noreferrer" aria-label="Apri: Secure Partitioning of Cloud Applications, with Cost Look-Ahead">↗</a>
+</article>
+<article class="publication-item reveal" data-publication data-kind="Conference" data-search="2023 conference sustainable cloud-edge infrastructure as a service alessandro bocci, stefano forti, antonio brogi 12th mediterranean conference on embedded computing (meco 2023), ieee, pp. 1–4">
+<span class="publication-year">2023</span>
+<div><h3>Sustainable Cloud-Edge Infrastructure as a Service</h3><p class="publication-authors">Alessandro Bocci, Stefano Forti, Antonio Brogi</p><p class="publication-meta">Conferenza · 12th Mediterranean Conference on Embedded Computing (MECO 2023), IEEE, pp. 1–4</p></div>
+<a class="publication-link" href="https://doi.org/10.1109/MECO58584.2023.10155023" target="_blank" rel="noreferrer" aria-label="Apri: Sustainable Cloud-Edge Infrastructure as a Service">↗</a>
+</article>
+<article class="publication-item reveal" data-publication data-kind="Journal" data-search="2021 journal secure faas orchestration in the fog: how far are we? alessandro bocci, stefano forti, gian-luigi ferrari, antonio brogi computing, vol. 103, no. 5, pp. 1025–1056">
+<span class="publication-year">2021</span>
+<div><h3>Secure FaaS orchestration in the fog: how far are we?</h3><p class="publication-authors">Alessandro Bocci, Stefano Forti, Gian-Luigi Ferrari, Antonio Brogi</p><p class="publication-meta">Rivista · Computing, vol. 103, no. 5, pp. 1025–1056</p></div>
+<a class="publication-link" href="https://doi.org/10.1007/s00607-021-00924-y" target="_blank" rel="noreferrer" aria-label="Apri: Secure FaaS orchestration in the fog: how far are we?">↗</a>
+</article></div><p class="no-results" id="publication-no-results" hidden>Nessuna pubblicazione corrisponde ai filtri selezionati.</p></div></section>
+<section class="section section-soft" id="terza-missione"><div class="shell"><div class="section-heading section-heading-wide reveal"><p class="section-index">04 · Terza missione</p><h2>Informatica e quantum computing fuori dall’aula</h2><p>Due attività continuative attraverso cui porto ricerca e programmazione fuori dall’aula, con iniziative rivolte a studenti, famiglie e pubblico non specialista.</p></div><div class="engagement-list"><article class="engagement-item engagement-card reveal"><div class="engagement-topline"><span class="engagement-number">01</span><span class="engagement-period">Dal 2024</span></div><h3>Pisa Quantum Group</h3><p class="engagement-role">Membro fondatore · Ricerca e divulgazione</p><p class="engagement-description">Partecipo alle attività del gruppo su quantum computing e quantum software engineering, contribuendo all’organizzazione del Pisa Quantum Festival 2024 e 2025 e a dimostrazioni pubbliche basate su QTris, tra cui BRIGHT-NIGHT e Internet Festival.</p><a class="engagement-link" href="https://quantum.unipi.it/" target="_blank" rel="noreferrer">Visita il gruppo <span aria-hidden="true">↗</span></a></article><article class="engagement-item engagement-card reveal"><div class="engagement-topline"><span class="engagement-number">02</span><span class="engagement-period">Dal 2024</span></div><h3>Pisa CoderDojo</h3><p class="engagement-role">Mentore e organizzatore volontario</p><p class="engagement-description">Preparo materiali e conduco incontri gratuiti per bambini e ragazzi su Scratch, Python, micro:bit, machine learning e robotica educativa, seguendo i partecipanti nella realizzazione dei loro progetti.</p><a class="engagement-link" href="https://pisa.coderdojo.it/" target="_blank" rel="noreferrer">Scopri CoderDojo <span aria-hidden="true">↗</span></a></article></div></div></section>
+<section class="contact-section" id="contatti"><div class="shell contact-card reveal"><div><p class="section-index">Contatti</p><h2>Parliamo di ricerca, tesi o divulgazione.</h2><p>Aperto a collaborazioni scientifiche, tesi e iniziative di divulgazione.</p></div><div class="contact-actions"><a class="button" href="https://orcid.org/0000-0002-7000-2103" target="_blank" rel="noreferrer">ORCID <span aria-hidden="true">↗</span></a><a class="button" href="https://github.com/alebocci" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a><a class="button button-primary" href="mailto:alessandro.bocci@unipi.it">Email <span aria-hidden="true">→</span></a><a class="button" href="https://di.unipi.it/persone/#a044855" target="_blank" rel="noreferrer">Pagina di Ateneo <span aria-hidden="true">↗</span></a></div></div></section>
+</main>
+<footer class="site-footer"><div class="shell footer-inner footer-simple">
+<p>© <span id="current-year">2026</span> · Alessandro Bocci</p>
+<div class="footer-links"><a href="mailto:alessandro.bocci@unipi.it">Email</a><a href="https://orcid.org/0000-0002-7000-2103" target="_blank" rel="noreferrer">ORCID</a><a href="https://github.com/alebocci" target="_blank" rel="noreferrer">GitHub</a><a href="https://di.unipi.it/persone/#a044855" target="_blank" rel="noreferrer">Pagina di Ateneo</a></div>
+</div></footer>
+<noscript><div class="noscript">Il contenuto resta disponibile; ricerca, filtri, tema e menu mobile richiedono JavaScript.</div></noscript>
+</body>
+</html>

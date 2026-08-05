@@ -2,7 +2,7 @@
   "site": {
     "name": "Alessandro Bocci",
     "initials": "AB",
-    "eyebrow": "Informatica · Ricerca · Didattica · Public engagement",
+    "eyebrow": "Informatica · Ricerca · Didattica · Terza missione",
     "role": "Ricercatore e docente in Informatica",
     "affiliation": "Dipartimento di Informatica, Università di Pisa",
     "intro": "Studio come progettare, distribuire e rendere osservabili sistemi software su infrastrutture eterogenee, dal continuum Cloud–Edge al quantum cloud, con attenzione a sicurezza, sostenibilità e qualità del servizio.",
@@ -37,7 +37,7 @@
     "title": "Progettare software che sappia dove e come essere eseguito",
     "paragraphs": [
       "La mia ricerca riguarda l’ingegneria di sistemi software distribuiti eseguiti su infrastrutture eterogenee. Il punto comune è trasformare differenze di capacità, affidabilità, consumo, costo e fiducia in informazioni utilizzabili per decidere placement, decomposizione, orchestrazione ed esecuzione.",
-      "Lavoro con modelli dichiarativi, architetture a servizi, prototipi open source ed esperimenti riproducibili. Negli ultimi anni ho esteso questi temi dal continuum Cloud–Edge alle infrastrutture quantum-cloud."
+      "Lavoro con modelli dichiarativi, architetture a servizi, prototipi open source ed esperimenti riproducibili. Negli ultimi anni ho esteso questi temi dal continuum Cloud–Edge alle infrastrutture quantum cloud."
     ],
     "positions": [
       {
@@ -127,7 +127,7 @@
       },
       {
         "title": "QTris",
-        "type": "Public engagement",
+        "type": "Terza missione",
         "description": "Applicazione didattica e divulgativa che usa un gioco interattivo per introdurre concetti di calcolo e software quantistico.",
         "url": "https://github.com/alebocci/QTris_browser",
         "cta": "Repository"
@@ -246,21 +246,21 @@
             "role": "Co-docente · Università di Pisa",
             "description": "Servizi REST, microservizi, OpenAPI, Flask, Docker, testing, integrazione continua e sicurezza del ciclo di sviluppo. Corso in lingua inglese.",
             "url": "https://elearning.di.unipi.it/course/view.php?id=1124",
-            "urlLabel": "Sito del corso"
+            "urlLabel": "Materiale didattico — accesso riservato"
           },
           {
             "title": "Programmazione e Analisi di Dati",
             "role": "Co-docente · Università di Pisa",
             "description": "Modulo dedicato alla programmazione orientata agli oggetti e allo sviluppo di interfacce grafiche in Python.",
             "url": "https://elearning22.humnet.unipi.it/enrol/index.php?id=1527",
-            "urlLabel": "Sito del corso"
+            "urlLabel": "Materiale didattico — accesso riservato"
           },
           {
             "title": "Secure Software Development",
             "role": "Responsabile dell’insegnamento · FIS Novo mesto",
             "description": "Secure SDLC, gestione del rischio, threat modeling, secure design, analisi statica, security testing, autenticazione, autorizzazione e DevSecOps. Corso magistrale in inglese.",
             "url": "https://moodle.fis.unm.si/course/view.php?id=223",
-            "urlLabel": "Sito del corso"
+            "urlLabel": "Materiale didattico — accesso riservato"
           }
         ]
       },
@@ -272,21 +272,21 @@
             "role": "Co-docente · Università di Pisa",
             "description": "Servizi REST, microservizi, OpenAPI, Flask, Docker, testing, integrazione continua e sicurezza del ciclo di sviluppo. Corso in lingua inglese.",
             "url": "https://unimap.unipi.it/registri/dettregistriNEW.php?re=11060882::::&ri=044855",
-            "urlLabel": "Sito del corso"
+            "urlLabel": "Registro del corso"
           },
           {
             "title": "Programmazione e Analisi di Dati",
             "role": "Co-docente · Università di Pisa",
             "description": "Modulo dedicato alla programmazione orientata agli oggetti e allo sviluppo di interfacce grafiche in Python.",
             "url": "https://unimap.unipi.it/registri/dettregistriNEW.php?re=11060960::::&ri=044855",
-            "urlLabel": "Sito del corso"
+            "urlLabel": "Registro del corso"
           },
           {
             "title": "Secure Software Development",
             "role": "Responsabile dell’insegnamento · FIS Novo mesto",
             "description": "Secure SDLC, gestione del rischio, threat modeling, secure design, analisi statica, security testing, autenticazione, autorizzazione e DevSecOps. Corso magistrale in inglese.",
             "url": "https://moodle.fis.unm.si/course/view.php?id=223",
-            "urlLabel": "Sito del corso"
+            "urlLabel": "Materiale didattico — accesso riservato"
           }
         ]
       },
@@ -298,14 +298,14 @@
             "role": "Co-docente · Università di Pisa",
             "description": "Servizi REST, microservizi, OpenAPI, Flask, Docker, testing, integrazione continua e sicurezza del ciclo di sviluppo. Corso in lingua inglese.",
             "url": "https://unimap.unipi.it/registri/dettregistriNEW.php?re=10336408::::&ri=044855",
-            "urlLabel": "Sito del corso"
+            "urlLabel": "Registro del corso"
           },
           {
             "title": "Programmazione e Analisi di Dati",
             "role": "Co-docente · Università di Pisa",
             "description": "Modulo dedicato alla programmazione orientata agli oggetti e allo sviluppo di interfacce grafiche in Python.",
             "url": "https://unimap.unipi.it/registri/dettregistriNEW.php?re=10336495::::&ri=044855",
-            "urlLabel": "Sito del corso"
+            "urlLabel": "Registro del corso"
           }
         ]
       }

@@ -1,27 +1,137 @@
-const state = { data: null, publicationFilter: 'all', publicationQuery: '' };
-const escapeHTML = (value = '') => String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
-const safeUrl = (url = '') => /^(https?:\/\/|mailto:|[^:]+\.html(?:#.*)?$|#)/i.test(String(url).trim()) ? String(url).trim() : '#';
-const externalAttrs = (url = '') => /^(mailto:|[^:]+\.html|#)/i.test(url) ? '' : ' target="_blank" rel="noreferrer"';
-const getPath = (object, path) => path.split('.').reduce((value,key)=>value?.[key], object);
-function bindText(data){document.querySelectorAll('[data-bind]').forEach(el=>{const v=getPath(data,el.dataset.bind);if(v!==undefined&&v!==null)el.textContent=v;});}
-function renderButtons(id,links,primary='Email'){const c=document.getElementById(id);if(!c)return;c.innerHTML=links.map(link=>`<a class="button${link.label===primary?' button-primary':''}" href="${escapeHTML(safeUrl(link.url))}"${externalAttrs(link.url)}>${escapeHTML(link.label)} <span aria-hidden="true">${link.url.startsWith('mailto:')?'→':'↗'}</span></a>`).join('');}
-function renderHome(data){
-  renderButtons('hero-links',data.site.links.filter(l=>['Email','ORCID','Google Scholar','GitHub'].includes(l.label)));renderButtons('contact-links',data.site.links.filter(l=>['Email','ORCID','GitHub','Pagina di Ateneo'].includes(l.label)));
-  document.getElementById('about-paragraphs').innerHTML=data.about.paragraphs.map(p=>`<p>${escapeHTML(p)}</p>`).join('');
-  document.getElementById('positions').innerHTML=data.about.positions.map(i=>`<div class="timeline-item"><time>${escapeHTML(i.period)}</time><div><strong>${escapeHTML(i.role)}</strong><span>${escapeHTML(i.place)}</span></div></div>`).join('');
-  document.getElementById('research-areas').innerHTML=data.research.areas.map(a=>`<article class="research-card reveal"><span class="card-number">${escapeHTML(a.number)}</span><h3>${escapeHTML(a.title)}</h3><p>${escapeHTML(a.description)}</p><ul class="tag-list">${a.tags.map(t=>`<li class="tag">${escapeHTML(t)}</li>`).join('')}</ul></article>`).join('');
-  document.getElementById('projects').innerHTML=data.research.projects.map(p=>`<article class="project-card reveal"><span class="project-type">${escapeHTML(p.type)}</span><h4>${escapeHTML(p.title)}</h4><p>${escapeHTML(p.description)}</p><a href="${escapeHTML(safeUrl(p.url))}"${externalAttrs(p.url)}>${escapeHTML(p.cta||'Scopri')} <span aria-hidden="true">↗</span></a></article>`).join('');
-  document.getElementById('engagement-list').innerHTML=data.engagement.items.map((i,index)=>`<article class="engagement-item engagement-card reveal"><div class="engagement-topline"><span class="engagement-number">0${index+1}</span><span class="engagement-period">${escapeHTML(i.period)}</span></div><h3>${escapeHTML(i.title)}</h3><p class="engagement-role">${escapeHTML(i.role)}</p><p class="engagement-description">${escapeHTML(i.description)}</p>${i.url?`<a class="engagement-link" href="${escapeHTML(safeUrl(i.url))}"${externalAttrs(i.url)}>${escapeHTML(i.cta||'Scopri di più')} <span aria-hidden="true">↗</span></a>`:''}</article>`).join('');
-  renderPublications();
-}
-function renderPublications(){if(!state.data||!document.getElementById('publications-list'))return;const q=state.publicationQuery.toLocaleLowerCase('it');const items=(state.data.publications.items||[]).filter(i=>i.visible!==false).filter(i=>(state.publicationFilter==='all'||i.kind===state.publicationFilter)&&`${i.year} ${i.kind} ${i.title} ${i.authors} ${i.venue}`.toLocaleLowerCase('it').includes(q)).sort((a,b)=>Number.parseInt(b.year,10)-Number.parseInt(a.year,10));document.getElementById('publications-list').innerHTML=items.map(i=>`<article class="publication-item reveal"><span class="publication-year">${escapeHTML(i.year)}</span><div><h3>${escapeHTML(i.title)}</h3><p class="publication-authors">${escapeHTML(i.authors)}</p><p class="publication-meta">${escapeHTML(i.kind)} · ${escapeHTML(i.venue)}</p></div><a class="publication-link" href="${escapeHTML(safeUrl(i.url))}"${externalAttrs(i.url)} aria-label="Apri ${escapeHTML(i.title)}">↗</a></article>`).join('');document.getElementById('publication-no-results').hidden=items.length>0;initReveal();}
-function renderTeaching(data){const c=document.getElementById('teaching-years');if(!c)return;c.innerHTML=(data.teaching.years||[]).map((group,index)=>`<section class="teaching-year reveal"><div class="teaching-year-heading"><span>${String(index+1).padStart(2,'0')}</span><div><p class="section-index">Anno accademico</p><h2>${escapeHTML(group.year)}</h2></div></div><div class="year-course-list">${group.courses.map(course=>`<article class="year-course-item"><div><h3>${escapeHTML(course.title)}</h3><p class="course-role">${escapeHTML(course.role)}</p><p class="course-description">${escapeHTML(course.description)}</p></div><a class="course-link" href="${escapeHTML(safeUrl(course.url))}"${externalAttrs(course.url)}>${escapeHTML(course.urlLabel||'Pagina del corso')} <span aria-hidden="true">↗</span></a></article>`).join('')}</div></section>`).join('');}
-function renderTheses(data){const c=document.getElementById('thesis-groups');if(!c)return;c.innerHTML=data.teaching.theses.groups.map((g,gi)=>`<section class="thesis-group reveal"><div class="thesis-group-heading"><span>${String(gi+1).padStart(2,'0')}</span><div><p class="section-index">${escapeHTML(g.title)}</p><h2>${escapeHTML(g.title)}</h2></div></div><div class="thesis-list">${g.items.map(i=>`<article class="thesis-item"><div class="thesis-meta"><span>${escapeHTML(i.date)}</span><span>${escapeHTML(i.degree)}</span></div><h3>${escapeHTML(i.title)}</h3><p class="thesis-student">${escapeHTML(i.student)}</p><p>${escapeHTML(i.description)}</p></article>`).join('')}</div></section>`).join('');}
-function initReveal(){const els=document.querySelectorAll('.reveal:not([data-reveal-ready])');if(!('IntersectionObserver'in window)){els.forEach(e=>e.classList.add('is-visible'));return;}const o=new IntersectionObserver((entries,obs)=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');obs.unobserve(e.target);}}),{threshold:.08});els.forEach(e=>{e.dataset.revealReady='true';o.observe(e);});}
-function initControls(){const toggle=document.querySelector('.nav-toggle'),nav=document.querySelector('.primary-nav');if(toggle&&nav){toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!open));nav.classList.toggle('is-open',!open);document.body.classList.toggle('menu-open',!open);});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{toggle.setAttribute('aria-expanded','false');nav.classList.remove('is-open');document.body.classList.remove('menu-open');}));}
-  const theme=document.querySelector('.theme-toggle');let saved=null;try{saved=localStorage.getItem('theme')}catch{}if(saved)document.documentElement.dataset.theme=saved;if(theme)theme.addEventListener('click',()=>{const next=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=next;try{localStorage.setItem('theme',next)}catch{}});
-  const search=document.getElementById('publication-search');if(search)search.addEventListener('input',e=>{state.publicationQuery=e.target.value.trim();renderPublications();});document.querySelectorAll('.filter-pill').forEach(b=>b.addEventListener('click',()=>{state.publicationFilter=b.dataset.filter;document.querySelectorAll('.filter-pill').forEach(x=>x.classList.toggle('is-active',x===b));renderPublications();}));
-  const page=document.body.dataset.page;document.querySelector(`[data-nav="${page}"]`)?.classList.add('is-active');const header=document.querySelector('.site-header');document.addEventListener('scroll',()=>header?.classList.toggle('is-scrolled',window.scrollY>10),{passive:true});
-}
-async function start(){initControls();try{const [cr,pr]=await Promise.all([fetch('content.json',{cache:'no-store'}),fetch('publications.json',{cache:'no-store'})]);if(!cr.ok||!pr.ok)throw new Error('Contenuti non disponibili');const data=await cr.json(),pub=await pr.json();data.publications.items=Array.isArray(pub.items)?pub.items:[];state.data=data;bindText(data);const page=document.body.dataset.page;if(page==='home')renderHome(data);if(page==='didattica')renderTeaching(data);if(page==='tesi')renderTheses(data);document.getElementById('current-year')?.replaceChildren(String(new Date().getFullYear()));initReveal();}catch(err){console.error(err);const main=document.querySelector('main');if(main)main.innerHTML='<section class="section"><div class="shell"><h1>Contenuti non disponibili</h1><p>Apri il sito tramite GitHub Pages o un server web.</p></div></section>';}}
-start();
+(() => {
+  const root = document.documentElement;
+  const body = document.body;
+  const language = body.dataset.language === 'en' ? 'en' : 'it';
+
+  const setThemeState = (theme) => {
+    const button = document.querySelector('.theme-toggle');
+    if (!button) return;
+    const dark = theme === 'dark';
+    const label = dark ? button.dataset.lightLabel : button.dataset.darkLabel;
+    button.setAttribute('aria-pressed', String(dark));
+    button.setAttribute('aria-label', label);
+    button.title = label;
+    const hiddenLabel = button.querySelector('.theme-toggle-label');
+    if (hiddenLabel) hiddenLabel.textContent = label;
+  };
+
+  const initialiseTheme = () => {
+    const button = document.querySelector('.theme-toggle');
+    if (!button) return;
+    const current = root.dataset.theme === 'dark' ? 'dark' : 'light';
+    setThemeState(current);
+    button.addEventListener('click', () => {
+      const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      root.dataset.theme = next;
+      try { localStorage.setItem('theme', next); } catch {}
+      setThemeState(next);
+    });
+  };
+
+  const initialiseMenu = () => {
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.primary-nav');
+    if (!toggle || !nav) return;
+
+    const label = toggle.querySelector('.nav-toggle-label');
+    const setOpen = (open, returnFocus = false) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      nav.classList.toggle('is-open', open);
+      body.classList.toggle('menu-open', open);
+      const text = open ? toggle.dataset.closeLabel : toggle.dataset.openLabel;
+      toggle.setAttribute('aria-label', text);
+      if (label) label.textContent = text;
+      if (!open && returnFocus) toggle.focus();
+    };
+
+    toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+    nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        setOpen(false, true);
+      }
+    });
+  };
+
+  const initialiseLanguagePreference = () => {
+    const link = document.querySelector('.language-toggle[href]');
+    if (!link) return;
+    link.addEventListener('click', () => {
+      try { localStorage.setItem('language', link.lang === 'en' ? 'en' : 'it'); } catch {}
+    });
+  };
+
+  const initialisePublications = () => {
+    const search = document.getElementById('publication-search');
+    const items = [...document.querySelectorAll('[data-publication]')];
+    const buttons = [...document.querySelectorAll('.filter-pill')];
+    const count = document.getElementById('publication-count');
+    const noResults = document.getElementById('publication-no-results');
+    if (!items.length || !count) return;
+
+    let filter = 'all';
+    let query = '';
+
+    const update = () => {
+      let visible = 0;
+      for (const item of items) {
+        const kindMatches = filter === 'all' || item.dataset.kind === filter;
+        const queryMatches = !query || (item.dataset.search || '').includes(query);
+        const show = kindMatches && queryMatches;
+        item.hidden = !show;
+        if (show) visible += 1;
+      }
+      const label = visible === 1 ? count.dataset.countSingular : count.dataset.countPlural;
+      count.textContent = `${visible} ${label}`;
+      if (noResults) noResults.hidden = visible !== 0;
+    };
+
+    search?.addEventListener('input', (event) => {
+      query = event.currentTarget.value.trim().toLocaleLowerCase(language);
+      update();
+    });
+
+    buttons.forEach((button) => button.addEventListener('click', () => {
+      filter = button.dataset.filter || 'all';
+      buttons.forEach((candidate) => {
+        const active = candidate === button;
+        candidate.classList.toggle('is-active', active);
+        candidate.setAttribute('aria-pressed', String(active));
+      });
+      update();
+    }));
+  };
+
+  const initialiseReveal = () => {
+    const elements = [...document.querySelectorAll('.reveal')];
+    if (!elements.length) return;
+    if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      elements.forEach((element) => element.classList.add('is-visible'));
+      return;
+    }
+    elements.forEach((element) => element.classList.add('reveal-ready'));
+    const observer = new IntersectionObserver((entries, currentObserver) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          currentObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    elements.forEach((element) => observer.observe(element));
+  };
+
+  const year = document.getElementById('current-year');
+  if (year) year.textContent = String(new Date().getFullYear());
+
+  const header = document.querySelector('.site-header');
+  const updateHeader = () => header?.classList.toggle('is-scrolled', window.scrollY > 10);
+  updateHeader();
+  document.addEventListener('scroll', updateHeader, { passive: true });
+
+  initialiseTheme();
+  initialiseMenu();
+  initialiseLanguagePreference();
+  initialisePublications();
+  initialiseReveal();
+})();
