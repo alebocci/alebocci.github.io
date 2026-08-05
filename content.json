@@ -7,7 +7,7 @@
     "affiliation": "Dipartimento di Informatica, Università di Pisa",
     "intro": "Studio come progettare, distribuire e rendere osservabili sistemi software su infrastrutture eterogenee, dal continuum Cloud–Edge al quantum cloud, con attenzione a sicurezza, sostenibilità e qualità del servizio.",
     "location": "Pisa, Italia",
-    "email": "bocci.alessandro.1987@gmail.com",
+    "email": "alessandro.bocci@unipi.it",
     "lastUpdated": "Agosto 2026",
     "availability": "Aperto a collaborazioni scientifiche, tesi e iniziative di divulgazione.",
     "links": [
@@ -25,7 +25,7 @@
       },
       {
         "label": "Email",
-        "url": "mailto:bocci.alessandro.1987@gmail.com"
+        "url": "mailto:alessandro.bocci@unipi.it"
       },
       {
         "label": "Pagina di Ateneo",
@@ -41,7 +41,7 @@
     ],
     "positions": [
       {
-        "period": "2023–2026",
+        "period": "Dal 2023",
         "role": "Ricercatore a tempo determinato di tipo A",
         "place": "Università di Pisa"
       },
@@ -49,11 +49,6 @@
         "period": "Dal 2024",
         "role": "Assistant Professor",
         "place": "Faculty of Information Studies, Novo mesto"
-      },
-      {
-        "period": "2021–2022",
-        "role": "Visiting Scholar / Visiting Researcher",
-        "place": "KTH Royal Institute of Technology"
       }
     ]
   },
@@ -143,7 +138,7 @@
     "intro": "Una selezione di lavori rappresentativi. L’elenco completo e aggiornato è disponibile su Google Scholar e ORCID."
   },
   "teaching": {
-    "intro": "Gli insegnamenti sono organizzati per anno accademico, con collegamenti ai siti dei corsi e agli ambienti e-learning.",
+    "intro": "Gli insegnamenti sono organizzati per anno accademico, con collegamenti ai siti dei corsi.",
     "supervision": {
       "value": "11",
       "label": "tesi magistrali e triennali supervisionate",
@@ -250,21 +245,21 @@
             "title": "Advanced Software Engineering",
             "role": "Co-docente · Università di Pisa",
             "description": "Servizi REST, microservizi, OpenAPI, Flask, Docker, testing, integrazione continua e sicurezza del ciclo di sviluppo. Corso in lingua inglese.",
-            "url": "https://pages.di.unipi.it/brogi/AttivitaDidattica/Informatica/AdvancedSoftwareEngineering/",
+            "url": "https://elearning.di.unipi.it/course/view.php?id=1124",
             "urlLabel": "Sito del corso"
           },
           {
             "title": "Programmazione e Analisi di Dati",
             "role": "Co-docente · Università di Pisa",
             "description": "Modulo dedicato alla programmazione orientata agli oggetti e allo sviluppo di interfacce grafiche in Python.",
-            "url": "https://elearning.humnet.unipi.it/course/search.php?search=Programmazione%20e%20Analisi%20di%20Dati",
+            "url": "https://elearning22.humnet.unipi.it/enrol/index.php?id=1527",
             "urlLabel": "Corso su e-learning"
           },
           {
             "title": "Secure Software Development",
             "role": "Responsabile dell’insegnamento · FIS Novo mesto",
             "description": "Secure SDLC, gestione del rischio, threat modeling, secure design, analisi statica, security testing, autenticazione, autorizzazione e DevSecOps. Corso magistrale in inglese.",
-            "url": "https://www.fis.unm.si/studijski-programi/cyber-security/?lang=en",
+            "url": "https://moodle.fis.unm.si/course/view.php?id=223",
             "urlLabel": "Scheda del corso su FIS"
           }
         ]
@@ -276,21 +271,21 @@
             "title": "Advanced Software Engineering",
             "role": "Co-docente · Università di Pisa",
             "description": "Servizi REST, microservizi, OpenAPI, Flask, Docker, testing, integrazione continua e sicurezza del ciclo di sviluppo. Corso in lingua inglese.",
-            "url": "https://pages.di.unipi.it/brogi/AttivitaDidattica/Informatica/AdvancedSoftwareEngineering/",
+            "url": "https://unimap.unipi.it/registri/dettregistriNEW.php?re=11060882::::&ri=044855",
             "urlLabel": "Sito del corso"
           },
           {
             "title": "Programmazione e Analisi di Dati",
             "role": "Co-docente · Università di Pisa",
             "description": "Modulo dedicato alla programmazione orientata agli oggetti e allo sviluppo di interfacce grafiche in Python.",
-            "url": "https://elearning.humnet.unipi.it/course/search.php?search=Programmazione%20e%20Analisi%20di%20Dati",
+            "url": "https://unimap.unipi.it/registri/dettregistriNEW.php?re=11060960::::&ri=044855",
             "urlLabel": "Corso su e-learning"
           },
           {
             "title": "Secure Software Development",
             "role": "Responsabile dell’insegnamento · FIS Novo mesto",
             "description": "Secure SDLC, gestione del rischio, threat modeling, secure design, analisi statica, security testing, autenticazione, autorizzazione e DevSecOps. Corso magistrale in inglese.",
-            "url": "https://www.fis.unm.si/studijski-programi/cyber-security/?lang=en",
+            "url": "https://moodle.fis.unm.si/course/view.php?id=223",
             "urlLabel": "Scheda del corso su FIS"
           }
         ]
@@ -302,14 +297,14 @@
             "title": "Advanced Software Engineering",
             "role": "Co-docente · Università di Pisa",
             "description": "Servizi REST, microservizi, OpenAPI, Flask, Docker, testing, integrazione continua e sicurezza del ciclo di sviluppo. Corso in lingua inglese.",
-            "url": "https://pages.di.unipi.it/brogi/AttivitaDidattica/Informatica/AdvancedSoftwareEngineering/",
+            "url": "https://unimap.unipi.it/registri/dettregistriNEW.php?re=10336408::::&ri=044855",
             "urlLabel": "Sito del corso"
           },
           {
             "title": "Programmazione e Analisi di Dati",
             "role": "Co-docente · Università di Pisa",
             "description": "Modulo dedicato alla programmazione orientata agli oggetti e allo sviluppo di interfacce grafiche in Python.",
-            "url": "https://elearning.humnet.unipi.it/course/search.php?search=Programmazione%20e%20Analisi%20di%20Dati",
+            "url": "https://unimap.unipi.it/registri/dettregistriNEW.php?re=10336495::::&ri=044855",
             "urlLabel": "Corso su e-learning"
           }
         ]
