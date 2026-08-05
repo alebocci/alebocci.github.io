@@ -1,0 +1,89 @@
+{
+  "_istruzioni": {
+    "mostrare_o_nascondere": "Imposta visible a true per mostrare la pubblicazione, false per nasconderla.",
+    "aggiungere": "Duplica uno degli oggetti dentro items, cambia i campi e assegna un id univoco.",
+    "tipo": "Per mantenere i filtri del sito usa Journal oppure Conference nel campo kind."
+  },
+  "items": [
+    {
+      "year": "2026",
+      "kind": "Journal",
+      "title": "Cut&Shoot: Distributed Execution of Quantum Circuit Fragments",
+      "authors": "Giuseppe Bisicchia, Alessandro Bocci, José García-Alonso, Juan M. Murillo, Antonio Brogi",
+      "venue": "IEEE Transactions on Quantum Engineering 7",
+      "url": "https://doi.org/10.1109/TQE.2026.3675340",
+      "id": "pub-2026-1",
+      "visible": true
+    },
+    {
+      "year": "2026",
+      "kind": "Journal",
+      "title": "Rethinking Services in the Quantum Age: The SOQ Paradigm",
+      "authors": "José García-Alonso et al., including Alessandro Bocci",
+      "venue": "ACM Transactions on Software Engineering and Methodology",
+      "url": "https://doi.org/10.1145/3805807",
+      "id": "pub-2026-2",
+      "visible": true
+    },
+    {
+      "year": "2025",
+      "kind": "Conference",
+      "title": "QSimBench: An Execution-Level Benchmark Suite for Quantum Software Engineering",
+      "authors": "Giuseppe Bisicchia, Alessandro Bocci, José García-Alonso, Juan M. Murillo, Antonio Brogi",
+      "venue": "IEEE Quantum Week / QCE 2025",
+      "url": "https://doi.org/10.1109/QCE65121.2025.10315",
+      "id": "pub-2025-3",
+      "visible": true
+    },
+    {
+      "year": "2024",
+      "kind": "Conference",
+      "title": "Towards Enabling Observability of Energy Demand, with NEST",
+      "authors": "Alessandro Bocci et al.",
+      "venue": "FRAME ’24, ACM",
+      "url": "https://doi.org/10.1145/3659994.3660314",
+      "id": "pub-2024-4",
+      "visible": true
+    },
+    {
+      "year": "2023",
+      "kind": "Journal",
+      "title": "Declarative Secure Placement of FaaS Orchestrations in the Cloud-Edge Continuum",
+      "authors": "Alessandro Bocci, Stefano Forti, Gian-Luigi Ferrari, Antonio Brogi",
+      "venue": "Electronics 12(6)",
+      "url": "https://doi.org/10.3390/electronics12061332",
+      "id": "pub-2023-5",
+      "visible": true
+    },
+    {
+      "year": "2023",
+      "kind": "Journal",
+      "title": "Secure Partitioning of Cloud Applications, with Cost Look-Ahead",
+      "authors": "Alessandro Bocci, Stefano Forti, Roberto Guanciale, Gian-Luigi Ferrari, Antonio Brogi",
+      "venue": "Future Internet 15(7)",
+      "url": "https://doi.org/10.3390/fi15070224",
+      "id": "pub-2023-6",
+      "visible": true
+    },
+    {
+      "year": "2023",
+      "kind": "Conference",
+      "title": "Sustainable Cloud-Edge Infrastructure as a Service",
+      "authors": "Alessandro Bocci, Stefano Forti, Antonio Brogi",
+      "venue": "MECO 2023, IEEE",
+      "url": "https://doi.org/10.1109/MECO58584.2023.10155023",
+      "id": "pub-2023-7",
+      "visible": true
+    },
+    {
+      "year": "2021",
+      "kind": "Journal",
+      "title": "Secure FaaS orchestration in the fog: how far are we?",
+      "authors": "Alessandro Bocci, Stefano Forti, Gian-Luigi Ferrari, Antonio Brogi",
+      "venue": "Computing 103",
+      "url": "https://doi.org/10.1007/s00607-021-00924-y",
+      "id": "pub-2021-8",
+      "visible": true
+    }
+  ]
+}
