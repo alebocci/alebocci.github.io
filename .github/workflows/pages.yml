@@ -25,8 +25,15 @@ jobs:
         with:
           node-version: 24
           package-manager-cache: false
+      - name: Validate source data
+        run: node scripts/validate.mjs --source
       - name: Build static HTML
         run: node scripts/build.mjs
+      - name: Validate generated site
+        run: node scripts/validate.mjs --dist
+      - name: Check external links
+        continue-on-error: true
+        run: node scripts/check-external-links.mjs
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:

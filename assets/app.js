@@ -2,11 +2,30 @@
   const root = document.documentElement;
   const body = document.body;
   const language = body.dataset.language === 'en' ? 'en' : 'it';
+  const normalizeSearch = (value) => String(value ?? '')
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .toLocaleLowerCase(language);
+
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+  const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+  const themeColours = { light: '#f5f6f2', dark: '#0c0f14' };
+
+  const savedTheme = () => {
+    try {
+      const value = localStorage.getItem('theme');
+      return value === 'dark' || value === 'light' ? value : null;
+    } catch {
+      return null;
+    }
+  };
 
   const setThemeState = (theme) => {
     const button = document.querySelector('.theme-toggle');
-    if (!button) return;
     const dark = theme === 'dark';
+    root.dataset.theme = dark ? 'dark' : 'light';
+    if (themeMeta) themeMeta.content = themeColours[dark ? 'dark' : 'light'];
+    if (!button) return;
     const label = dark ? button.dataset.lightLabel : button.dataset.darkLabel;
     button.setAttribute('aria-pressed', String(dark));
     button.setAttribute('aria-label', label);
@@ -17,14 +36,15 @@
 
   const initialiseTheme = () => {
     const button = document.querySelector('.theme-toggle');
-    if (!button) return;
-    const current = root.dataset.theme === 'dark' ? 'dark' : 'light';
-    setThemeState(current);
-    button.addEventListener('click', () => {
+    const initial = savedTheme() || (systemTheme.matches ? 'dark' : 'light');
+    setThemeState(initial);
+    button?.addEventListener('click', () => {
       const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
-      root.dataset.theme = next;
       try { localStorage.setItem('theme', next); } catch {}
       setThemeState(next);
+    });
+    systemTheme.addEventListener?.('change', (event) => {
+      if (!savedTheme()) setThemeState(event.matches ? 'dark' : 'light');
     });
   };
 
@@ -69,6 +89,7 @@
     const noResults = document.getElementById('publication-no-results');
     if (!items.length || !count) return;
 
+    const searchIndex = new Map(items.map((item) => [item, normalizeSearch(item.dataset.search || item.textContent)]));
     let filter = 'all';
     let query = '';
 
@@ -76,7 +97,7 @@
       let visible = 0;
       for (const item of items) {
         const kindMatches = filter === 'all' || item.dataset.kind === filter;
-        const queryMatches = !query || (item.dataset.search || '').includes(query);
+        const queryMatches = !query || searchIndex.get(item).includes(query);
         const show = kindMatches && queryMatches;
         item.hidden = !show;
         if (show) visible += 1;
@@ -87,7 +108,7 @@
     };
 
     search?.addEventListener('input', (event) => {
-      query = event.currentTarget.value.trim().toLocaleLowerCase(language);
+      query = normalizeSearch(event.currentTarget.value.trim());
       update();
     });
 

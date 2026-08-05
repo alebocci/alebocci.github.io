@@ -4,7 +4,7 @@ import path from 'node:path';
 const root = process.cwd();
 const outDir = path.join(root, 'dist');
 const SITE = 'https://alebocci.github.io';
-const ASSET_VERSION = '20260805-audit1';
+const ASSET_VERSION = (process.env.GITHUB_SHA || 'development').slice(0, 12);
 
 const readJson = async (file) => JSON.parse(await fs.readFile(path.join(root, file), 'utf8'));
 const [it, en, publications] = await Promise.all([
@@ -26,7 +26,7 @@ const ui = {
     researchHeading: 'Infrastrutture eterogenee, requisiti osservabili, software riproducibile',
     projectsIndex: 'Progetti e software', projectsHeading: 'Dal metodo all’artefatto aperto', githubProfile: 'Profilo GitHub',
     engagementHeading: 'Informatica e quantum computing fuori dall’aula',
-    updated: 'Aggiornato:', portraitAria: 'Ritratto di Alessandro Bocci', portraitAlt: 'Ritratto di Alessandro Bocci',
+    updated: 'Aggiornato:', portraitAlt: 'Ritratto di Alessandro Bocci', socialAlt: 'Alessandro Bocci, ricercatore e docente in Informatica presso l’Università di Pisa',
     searchLabel: 'Cerca tra le pubblicazioni', searchPlaceholder: 'Cerca per titolo, autore, sede o anno', filterAria: 'Filtra per tipo',
     all: 'Tutte', journals: 'Riviste', conferences: 'Conferenze', kind: { Journal: 'Rivista', Conference: 'Conferenza' },
     publicationCount: (n) => `${n} ${n === 1 ? 'pubblicazione visibile' : 'pubblicazioni visibili'}`,
@@ -56,7 +56,7 @@ const ui = {
     researchHeading: 'Heterogeneous infrastructures, observable requirements, reproducible software',
     projectsIndex: 'Projects and software', projectsHeading: 'From methods to open artefacts', githubProfile: 'GitHub profile',
     engagementHeading: 'Computer science and quantum computing beyond the classroom',
-    updated: 'Updated:', portraitAria: 'Portrait of Alessandro Bocci', portraitAlt: 'Portrait of Alessandro Bocci',
+    updated: 'Updated:', portraitAlt: 'Portrait of Alessandro Bocci', socialAlt: 'Alessandro Bocci, researcher and lecturer in Computer Science at the University of Pisa',
     searchLabel: 'Search publications', searchPlaceholder: 'Search by title, author, venue, or year', filterAria: 'Filter by type',
     all: 'All', journals: 'Journals', conferences: 'Conferences', kind: { Journal: 'Journal', Conference: 'Conference' },
     publicationCount: (n) => `${n} visible ${n === 1 ? 'publication' : 'publications'}`,
@@ -80,6 +80,10 @@ const esc = (value = '') => String(value)
   .replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
   .replaceAll('"', '&quot;').replaceAll("'", '&#039;');
 const attr = esc;
+const normalizeSearch = (value, locale = 'en') => String(value ?? '')
+  .normalize('NFD')
+  .replace(/\p{Diacritic}/gu, '')
+  .toLocaleLowerCase(locale);
 const isExternal = (url = '') => /^https?:\/\//i.test(url);
 const linkAttrs = (url = '') => isExternal(url) ? ' target="_blank" rel="noreferrer"' : '';
 const visiblePublications = publications.items.filter((item) => item.visible !== false);
@@ -99,7 +103,8 @@ function metaHead(lang, page, data) {
   const p = u.pages[page];
   const url = canonical(lang, page);
   const otherLang = lang === 'it' ? 'en' : 'it';
-  const image = `${SITE}/assets/alessandro-bocci.webp`;
+  const profileImage = `${SITE}/assets/alessandro-bocci.webp`;
+  const socialImage = `${SITE}/assets/og-card-${lang}.webp`;
   const profileJson = page === 'home' ? `\n<script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'ProfilePage',
@@ -114,7 +119,7 @@ function metaHead(lang, page, data) {
       name: data.site.name,
       jobTitle: data.site.role,
       affiliation: { '@type': 'Organization', name: lang === 'it' ? 'Università di Pisa' : 'University of Pisa', url: 'https://www.unipi.it/' },
-      image,
+      image: profileImage,
       email: `mailto:${data.site.email}`,
       url: SITE,
       sameAs: data.site.links.filter((l) => /^https?:\/\//.test(l.url)).map((l) => l.url),
@@ -124,6 +129,7 @@ function metaHead(lang, page, data) {
   return `<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#f5f6f2">
+<meta name="color-scheme" content="light dark">
 <meta name="description" content="${attr(p.description)}">
 <link rel="canonical" href="${url}">
 <link rel="alternate" hreflang="it" href="${canonical('it', page)}">
@@ -134,24 +140,28 @@ function metaHead(lang, page, data) {
 <meta property="og:locale:alternate" content="${ui[otherLang].locale}">
 <meta property="og:title" content="${attr(p.title)}">
 <meta property="og:description" content="${attr(p.description)}">
-<meta property="og:image" content="${image}">
-<meta property="og:image:alt" content="${attr(u.portraitAlt)}">
+<meta property="og:image" content="${socialImage}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/webp">
+<meta property="og:image:alt" content="${attr(u.socialAlt)}">
 <meta property="og:url" content="${url}">
 <meta property="og:site_name" content="Alessandro Bocci">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${attr(p.title)}">
 <meta name="twitter:description" content="${attr(p.description)}">
-<meta name="twitter:image" content="${image}">
+<meta name="twitter:image" content="${socialImage}">
+<meta name="twitter:image:alt" content="${attr(u.socialAlt)}">
 <link rel="icon" href="/assets/favicon.ico?v=${ASSET_VERSION}" sizes="any">
 <link rel="icon" href="/assets/favicon.png?v=${ASSET_VERSION}" type="image/png">
 <link rel="apple-touch-icon" href="/assets/favicon-192.png?v=${ASSET_VERSION}">
 <link rel="stylesheet" href="/assets/style.css?v=${ASSET_VERSION}">
-<script>try{const t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch{}</script>
+<script>(()=>{try{const s=localStorage.getItem('theme');const t=s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.dataset.theme=t;const m=document.querySelector('meta[name=\"theme-color\"]');if(m)m.content=t==='dark'?'#0c0f14':'#f5f6f2'}catch{}})()</script>
 <script defer src="/assets/app.js?v=${ASSET_VERSION}"></script>${profileJson}
 <title>${esc(p.title)}</title>`;
 }
 
-function nav(lang, active) {
+function nav(lang, active, page) {
   const u = ui[lang];
   const links = [
     ['profile', u.nav.profile, homeAnchor(lang, 'profile')],
@@ -162,7 +172,11 @@ function nav(lang, active) {
     ['contacts', u.nav.contacts, homeAnchor(lang, 'contacts')]
   ];
   return `<nav class="primary-nav" id="primary-nav" aria-label="${attr(u.navAria)}">
-${links.map(([key, label, url]) => `<a href="${url}" data-nav="${key}"${active === key ? ' class="is-active" aria-current="page"' : ''}>${esc(label)}</a>`).join('\n')}
+${links.map(([key, label, url]) => {
+  const current = active === key;
+  const currentValue = page === 'theses' ? 'location' : 'page';
+  return `<a href="${url}" data-nav="${key}"${current ? ` class="is-active" aria-current="${currentValue}"` : ''}>${esc(label)}</a>`;
+}).join('\n')}
 </nav>`;
 }
 
@@ -175,7 +189,7 @@ function header(lang, page, active, showLogo = false) {
 <button class="nav-toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="${attr(u.openMenu)}" data-open-label="${attr(u.openMenu)}" data-close-label="${attr(u.closeMenu)}">
 <span></span><span></span><span></span><span class="sr-only nav-toggle-label">${esc(u.openMenu)}</span>
 </button>
-${nav(lang, active)}
+${nav(lang, active, page)}
 <div class="header-controls">
 <a class="language-toggle" href="${counterpart(lang, page)}" hreflang="${u.otherCode}" lang="${u.otherCode}" aria-label="${attr(u.otherAria)}" title="${attr(u.otherAria)}">${u.otherLabel}</a>
 <button class="theme-toggle" type="button" aria-pressed="false" aria-label="${attr(u.themeDark)}" title="${attr(u.themeDark)}" data-dark-label="${attr(u.themeDark)}" data-light-label="${attr(u.themeLight)}"><span aria-hidden="true">◐</span><span class="sr-only theme-toggle-label">${esc(u.themeDark)}</span></button>
@@ -199,7 +213,7 @@ function buttons(links) {
 function publicationHtml(lang) {
   const u = ui[lang];
   return visiblePublications.map((item) => {
-    const searchable = `${item.year} ${item.kind} ${item.title} ${item.authors} ${item.venue}`.toLocaleLowerCase(lang);
+    const searchable = normalizeSearch(`${item.year} ${item.kind} ${item.title} ${item.authors} ${item.venue}`, lang);
     return `<article class="publication-item reveal" data-publication data-kind="${attr(item.kind)}" data-search="${attr(searchable)}">
 <span class="publication-year">${esc(item.year)}</span>
 <div><h3>${esc(item.title)}</h3><p class="publication-authors">${esc(item.authors)}</p><p class="publication-meta">${esc(u.kind[item.kind] ?? item.kind)} · ${esc(item.venue)}</p></div>
@@ -233,7 +247,7 @@ function homePage(lang, data) {
   const body = `<main id="main">
 <section class="hero shell" aria-labelledby="hero-title">
 <div class="hero-copy reveal"><p class="eyebrow">${esc(data.site.eyebrow)}</p><h1 id="hero-title">${esc(data.site.name)}</h1><p class="hero-role">${esc(data.site.role)}</p><p class="hero-affiliation">${esc(data.site.affiliation)}</p><p class="hero-intro">${esc(data.site.intro)}</p><div class="hero-actions">${buttons(heroLinks)}</div><p class="availability"><span aria-hidden="true"></span><span>${esc(data.site.availability)}</span></p></div>
-<aside class="hero-visual reveal" aria-label="${attr(u.portraitAria)}"><div class="monogram-card profile-card"><img class="profile-photo" src="/assets/alessandro-bocci.webp?v=${ASSET_VERSION}" alt="${attr(u.portraitAlt)}" width="820" height="1024"><div class="hero-meta"><span>${esc(data.site.location)}</span><span>${esc(u.updated)} <strong>${esc(data.site.lastUpdated)}</strong></span></div></div></aside>
+<aside class="hero-visual reveal"><div class="monogram-card profile-card"><img class="profile-photo" src="/assets/alessandro-bocci.webp?v=${ASSET_VERSION}" alt="${attr(u.portraitAlt)}" width="820" height="1024"><div class="hero-meta"><span>${esc(data.site.location)}</span><span>${esc(u.updated)} <strong>${esc(data.site.lastUpdated)}</strong></span></div></div></aside>
 </section>
 <section class="section section-soft" id="${u.ids.profile}"><div class="shell split-layout"><div class="section-heading reveal"><p class="section-index">${esc(u.profileIndex)}</p><h2>${esc(data.about.title)}</h2></div><div class="about-copy reveal"><div>${data.about.paragraphs.map((p) => `<p>${esc(p)}</p>`).join('')}</div><div class="timeline">${data.about.positions.map((i) => `<div class="timeline-item"><time>${esc(i.period)}</time><div><strong>${esc(i.role)}</strong><span>${esc(i.place)}</span></div></div>`).join('')}</div></div></div></section>
 <section class="section" id="${u.ids.research}"><div class="shell"><div class="section-heading section-heading-wide reveal"><p class="section-index">${esc(u.researchIndex)}</p><h2>${esc(u.researchHeading)}</h2><p>${esc(data.research.intro)}</p></div><div class="research-grid">${data.research.areas.map((a) => `<article class="research-card reveal"><span class="card-number">${esc(a.number)}</span><h3>${esc(a.title)}</h3><p>${esc(a.description)}</p><ul class="tag-list">${a.tags.map((tag) => `<li class="tag">${esc(tag)}</li>`).join('')}</ul></article>`).join('')}</div><div class="subheading-row reveal"><div><p class="section-index">${esc(u.projectsIndex)}</p><h3>${esc(u.projectsHeading)}</h3></div><a class="text-link" href="https://github.com/alebocci" target="_blank" rel="noreferrer">${esc(u.githubProfile)} <span aria-hidden="true">↗</span></a></div><div class="project-grid">${data.research.projects.map((p) => `<article class="project-card reveal"><span class="project-type">${esc(p.type)}</span><h4>${esc(p.title)}</h4><p>${esc(p.description)}</p><a href="${attr(p.url)}"${linkAttrs(p.url)}>${esc(p.cta || 'Repository')} <span aria-hidden="true">↗</span></a></article>`).join('')}</div></div></section>
@@ -267,10 +281,10 @@ function thesesPage(lang, data) {
 function notFoundPage() {
   return `<!doctype html>
 <html lang="it"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f5f6f2">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f5f6f2"><meta name="color-scheme" content="light dark">
 <meta name="robots" content="noindex"><meta name="description" content="La pagina richiesta non è disponibile.">
 <link rel="icon" href="/assets/favicon.ico?v=${ASSET_VERSION}" sizes="any"><link rel="icon" href="/assets/favicon.png?v=${ASSET_VERSION}" type="image/png"><link rel="apple-touch-icon" href="/assets/favicon-192.png?v=${ASSET_VERSION}"><link rel="stylesheet" href="/assets/style.css?v=${ASSET_VERSION}">
-<script>try{const t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch{}</script><script defer src="/assets/404.js?v=${ASSET_VERSION}"></script>
+<script>(()=>{try{const s=localStorage.getItem('theme');const t=s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.dataset.theme=t;const m=document.querySelector('meta[name=\"theme-color\"]');if(m)m.content=t==='dark'?'#0c0f14':'#f5f6f2'}catch{}})()</script><script defer src="/assets/404.js?v=${ASSET_VERSION}"></script>
 <title>Pagina non trovata · Alessandro Bocci</title></head>
 <body data-page="404"><a class="skip-link" href="#main" data-404-it="Vai al contenuto" data-404-en="Skip to content">Vai al contenuto</a>
 <header class="site-header"><div class="shell header-inner"><a class="brand" href="/" aria-label="Vai alla home" data-404-aria-it="Vai alla home" data-404-aria-en="Go to the home page"><span class="brand-name">Alessandro Bocci</span></a><div class="header-controls header-controls-minimal"><button class="language-toggle" type="button" aria-label="Passa all’inglese" title="Passa all’inglese" data-404-language>EN</button><button class="theme-toggle" type="button" aria-pressed="false" aria-label="Passa al tema scuro" title="Passa al tema scuro" data-dark-label-it="Passa al tema scuro" data-light-label-it="Passa al tema chiaro" data-dark-label-en="Switch to dark theme" data-light-label-en="Switch to light theme"><span aria-hidden="true">◐</span><span class="sr-only theme-toggle-label">Passa al tema scuro</span></button></div></div></header>
@@ -307,9 +321,6 @@ await Promise.all([
   write('404.html', notFoundPage()),
   write('robots.txt', `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`),
   write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${['home','teaching','theses'].flatMap((page) => ['it','en'].map((lang) => `  <url><loc>${canonical(lang, page)}</loc><xhtml:link rel="alternate" hreflang="it" href="${canonical('it', page)}"/><xhtml:link rel="alternate" hreflang="en" href="${canonical('en', page)}"/></url>`)).join('\n')}\n</urlset>\n`),
-  write('.nojekyll', ''),
-  write('publications.json', JSON.stringify(publications, null, 2) + '\n'),
-  write('content.json', JSON.stringify(it, null, 2) + '\n'),
-  write('content.en.json', JSON.stringify(en, null, 2) + '\n')
+  write('.nojekyll', '')
 ]);
 console.log(`Built ${visiblePublications.length} publications and ${thesisCount} theses into ${outDir}`);
