@@ -253,14 +253,14 @@
             "role": "Co-docente · Università di Pisa",
             "description": "Modulo dedicato alla programmazione orientata agli oggetti e allo sviluppo di interfacce grafiche in Python.",
             "url": "https://elearning22.humnet.unipi.it/enrol/index.php?id=1527",
-            "urlLabel": "Corso su e-learning"
+            "urlLabel": "Sito del corso"
           },
           {
             "title": "Secure Software Development",
             "role": "Responsabile dell’insegnamento · FIS Novo mesto",
             "description": "Secure SDLC, gestione del rischio, threat modeling, secure design, analisi statica, security testing, autenticazione, autorizzazione e DevSecOps. Corso magistrale in inglese.",
             "url": "https://moodle.fis.unm.si/course/view.php?id=223",
-            "urlLabel": "Scheda del corso su FIS"
+            "urlLabel": "Sito del corso"
           }
         ]
       },
@@ -279,14 +279,14 @@
             "role": "Co-docente · Università di Pisa",
             "description": "Modulo dedicato alla programmazione orientata agli oggetti e allo sviluppo di interfacce grafiche in Python.",
             "url": "https://unimap.unipi.it/registri/dettregistriNEW.php?re=11060960::::&ri=044855",
-            "urlLabel": "Corso su e-learning"
+            "urlLabel": "Sito del corso"
           },
           {
             "title": "Secure Software Development",
             "role": "Responsabile dell’insegnamento · FIS Novo mesto",
             "description": "Secure SDLC, gestione del rischio, threat modeling, secure design, analisi statica, security testing, autenticazione, autorizzazione e DevSecOps. Corso magistrale in inglese.",
             "url": "https://moodle.fis.unm.si/course/view.php?id=223",
-            "urlLabel": "Scheda del corso su FIS"
+            "urlLabel": "Sito del corso"
           }
         ]
       },
@@ -305,7 +305,7 @@
             "role": "Co-docente · Università di Pisa",
             "description": "Modulo dedicato alla programmazione orientata agli oggetti e allo sviluppo di interfacce grafiche in Python.",
             "url": "https://unimap.unipi.it/registri/dettregistriNEW.php?re=10336495::::&ri=044855",
-            "urlLabel": "Corso su e-learning"
+            "urlLabel": "Sito del corso"
           }
         ]
       }
