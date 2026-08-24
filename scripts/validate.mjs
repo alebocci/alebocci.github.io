@@ -86,6 +86,7 @@ async function validateSource() {
     }
     requireString(content.site?.name, `content.${language}.site.name`);
     requireString(content.site?.role, `content.${language}.site.role`);
+    requireUrl(content.site?.affiliationUrl, `content.${language}.site.affiliationUrl`, { allowMailto: false });
     requireString(content.site?.email, `content.${language}.site.email`);
     if (!Array.isArray(content.site?.links) || !content.site.links.length) fail(`content.${language}.site.links: almeno un collegamento richiesto`);
     if (!Array.isArray(content.research?.areas) || !content.research.areas.length) fail(`content.${language}.research.areas: almeno un'area richiesta`);

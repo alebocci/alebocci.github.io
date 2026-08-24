@@ -5,6 +5,7 @@
     "eyebrow": "Computer Science · Research · Teaching · Public engagement",
     "role": "Researcher and lecturer in Computer Science",
     "affiliation": "Department of Computer Science, University of Pisa",
+    "affiliationUrl": "https://di.unipi.it/en/",
     "intro": "I study how to design, distribute, and make software systems observable across heterogeneous infrastructures, from the Cloud–Edge continuum to the quantum cloud, with a focus on security, sustainability, and quality of service.",
     "location": "Pisa, Italy",
     "email": "alessandro.bocci@unipi.it",

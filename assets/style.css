@@ -97,7 +97,7 @@ img, svg { max-width: 100%; }
 
 .hero {
   min-height: calc(100vh - var(--header-h));
-  padding: clamp(70px, 10vw, 130px) 0 60px;
+  padding: max(var(--header-h), clamp(70px, 10vw, 130px)) 0 60px;
   display: grid; grid-template-columns: minmax(0, 1.22fr) minmax(320px, .78fr);
   grid-template-areas: "copy visual"; gap: 70px 80px; align-items: center;
 }
