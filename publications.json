@@ -8,6 +8,16 @@
     {
       "year": "2026",
       "kind": "Journal",
+      "title": "How Many Shots Are Enough for a Quantum Circuit?",
+      "authors": "Giuseppe Bisicchia, Alessandro Bocci, Ernesto Pimentel, Antonio Brogi",
+      "venue": "ACM Transactions on Quantum Computing",
+      "url": "https://doi.org/10.1145/3841468",
+      "id": "pub-2026-3",
+      "visible": true
+    },
+    {
+      "year": "2026",
+      "kind": "Journal",
       "title": "Cut&Shoot: Distributed Execution of Quantum Circuit Fragments",
       "authors": "Giuseppe Bisicchia, Alessandro Bocci, José García-Alonso, Juan M. Murillo, Antonio Brogi",
       "venue": "IEEE Transactions on Quantum Engineering, vol. 7, art. 3102214",
