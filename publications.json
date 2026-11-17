@@ -8,6 +8,26 @@
     {
       "year": "2026",
       "kind": "Journal",
+      "title": "Shot Optimization in Quantum Computing: A Scoping Review",
+      "authors": "Alessandro Bocci, Giuseppe Bisicchia, Antonio Brogi",
+      "venue": "Future Internet",
+      "url": "https://doi.org/10.3390/fi18110627",
+      "id": "pub-2026-4",
+      "visible": true
+    },
+    {
+      "year": "2026",
+      "kind": "Journal",
+      "title": "Formalising the Incremental Execution of Static Quantum Circuits",
+      "authors": "Alessandro Bocci, Giuseppe Bisicchia, Ernesto Pimentel, Antonio Brogi",
+      "venue": "Journal of Logical and Algebraic Methods in Programming",
+      "url": "https://doi.org/10.1016/j.jlamp.2026.101174",
+      "id": "pub-2026-5",
+      "visible": true
+    },
+    {
+      "year": "2026",
+      "kind": "Journal",
       "title": "How Many Shots Are Enough for a Quantum Circuit?",
       "authors": "Giuseppe Bisicchia, Alessandro Bocci, Ernesto Pimentel, Antonio Brogi",
       "venue": "ACM Transactions on Quantum Computing",
