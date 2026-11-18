@@ -239,6 +239,19 @@
       ]
     },
     "years": [
+           {
+
+        "year": "2026/2027",
+        "courses": [
+          {
+            "title": "Advanced Software Engineering",
+            "role": "Co-lecturer · University of Pisa",
+            "description": "REST services, microservices, OpenAPI, Flask, Docker, testing, continuous integration, and software-development lifecycle security. Taught in English.",
+            "url": "https://elearning.di.unipi.it/course/view.php?id=1124",
+            "urlLabel": "Course materials — restricted access"
+          }
+        ]
+      },
       {
         "year": "2025/2026",
         "courses": [
